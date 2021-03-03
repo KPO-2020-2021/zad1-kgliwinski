@@ -3,13 +3,14 @@
 #include <string.h>
 
 
-/*program kompiluje sie poprawnie w c oraz dziala poprawnie*/
+//program kompiluje sie poprawnie w c oraz dziala poprawnie*/
 
-/*uruchomienie programu w c:
-/*  Napis Latin2:  "Cze�� �wiecie!!! �ycz� mi�ego dnia."
-    Napis ASCII:   "Czesc Swiecie!!! Zycze milego dnia."  */
+//uruchomienie programu w c:
+//  Napis Latin2:  "Cze�� �wiecie!!! �ycz� mi�ego dnia."
+//   Napis ASCII:   "Czesc Swiecie!!! Zycze milego dnia."  */
  
-/*w c++ program informuje o bledzie -Wmultichar, co oznacza ze przypisywany do zmiennych znak jest za duzy (poniewaz z definicji ) */
+//w c++ program informuje o bledzie -Wmultichar, co oznacza ze przypisywany do zmiennej w tablicy znak jest za duzy niz zostalo to okreslone w definiowaniu zmiennych
+
 
 char Zamien( int KodZnaku, int *TabKodow, char *TabZnakow, int Rozmiar)
 {
@@ -34,13 +35,13 @@ void KonwertujNapis( char *Napis, int *TabKodow, char *TabZnakow, int Rozmiar)
 int main()
 {
   int  IloscKodow = 10;
-  int  Rozmiar = IloscKodow * sizeof('�');    /*w c bedzie przypisywalo inna ilosc pamieci (sizeof(int)) niz w c++ (sizeof(char))*/
+  int  Rozmiar = IloscKodow * sizeof('�');    //w c bedzie przypisywalo inna ilosc pamieci (sizeof(int)) niz w c++ (sizeof(char))
                                               
   int  *TabKodow = (int*)malloc(Rozmiar);
   char *TabZnakow = (char*)malloc(IloscKodow*sizeof(char)); 
   char *Napis = strdup("Cze�� �wiecie!!! �ycz� mi�ego dnia.");
 
-  TabKodow[0] = '�';     TabZnakow[0] = 'c';    /*pproby przypisania znaku '�' do zmiennych w tablicy skoncza sie niepowodzeniem, poniewaz nie starczy na nie pamieci*/
+  TabKodow[0] = '�';     TabZnakow[0] = 'c';    //pproby przypisania znaku '�' do zmiennych w tablicy skoncza sie niepowodzeniem, poniewaz nie starczy na nie pamieci
   TabKodow[1] = '�';     TabZnakow[1] = 'e';
   TabKodow[2] = '�';     TabZnakow[2] = 'l';
   TabKodow[3] = '�';     TabZnakow[3] = 's';
