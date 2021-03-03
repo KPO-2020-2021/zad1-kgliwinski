@@ -3,6 +3,7 @@
 
 
 
+
 /*
  *  Liczy ilosc wystapien znaku "spacja"
  *
@@ -68,9 +69,9 @@ int RozmiarNajdluzszegoSlowa(char* Tekst)
  */
 void ZamienNaPodkreslenie(char* Tekst)
 {
-  for (; *Tekst; ++Tekst)
-      if (*Tekst == ' ') *Tekst = '_';
-}
+  for (; *Tekst; ++Tekst)                 //program gdb wskazuje ze zrzut pamieci nastepuje w funkcji ZamienNaPodkreslenie()
+      if (*Tekst == ' ') *Tekst = '_';    //problemem jest prawdopodobnie nieskonczona petla (brak warunku konczacego)
+}                                         //uruchomienie programu debuggerem potwierdza ze blad jest w petli for
 
 
 
