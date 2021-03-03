@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-double Dodaj();
+double Dodaj();   //aby program kompilowal sie w c++ nalezy dodac tu argumenty funkcji w jej deklaracji (podobnie jak w pliku modul.c)
 
 
 int main( )
@@ -13,3 +13,8 @@ int main( )
 
   return 0;
 }
+
+//w c skompilowany i skonsolidowany program dziala poprawnie
+
+//w c++ natomiast przy kompilacji pliku program.c wypisuje blad o zbyt wielu argumentach funkcji Dodaj(), co jest spowodowane ze przy niezadeklarowanych funkcjach w c 
+//przyjmowane jest automatycznie ze sa to wartosci double; w c++ jest to niedopuszczalne
