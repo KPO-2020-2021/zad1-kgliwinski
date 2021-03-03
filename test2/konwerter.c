@@ -3,6 +3,13 @@
 #include <string.h>
 
 
+/*program kompiluje sie poprawnie w c oraz dziala poprawnie*/
+
+/*uruchomienie programu w c:
+/*  Napis Latin2:  "Czeï¿½ï¿½ ï¿½wiecie!!! ï¿½yczï¿½ miï¿½ego dnia."
+    Napis ASCII:   "Czesc Swiecie!!! Zycze milego dnia."  */
+ 
+/*w c++ program informuje o bledzie -Wmultichar, co oznacza ze przypisywany do zmiennych znak jest za duzy (poniewaz z definicji ) */
 
 char Zamien( int KodZnaku, int *TabKodow, char *TabZnakow, int Rozmiar)
 {
@@ -27,22 +34,22 @@ void KonwertujNapis( char *Napis, int *TabKodow, char *TabZnakow, int Rozmiar)
 int main()
 {
   int  IloscKodow = 10;
-  int  Rozmiar = IloscKodow * sizeof('¶');
-
+  int  Rozmiar = IloscKodow * sizeof('ï¿½');    /*w c bedzie przypisywalo inna ilosc pamieci (sizeof(int)) niz w c++ (sizeof(char))*/
+                                              
   int  *TabKodow = (int*)malloc(Rozmiar);
   char *TabZnakow = (char*)malloc(IloscKodow*sizeof(char)); 
-  char *Napis = strdup("Cze¶æ ¦wiecie!!! ¯yczê mi³ego dnia.");
+  char *Napis = strdup("Czeï¿½ï¿½ ï¿½wiecie!!! ï¿½yczï¿½ miï¿½ego dnia.");
 
-  TabKodow[0] = 'æ';     TabZnakow[0] = 'c';
-  TabKodow[1] = 'ê';     TabZnakow[1] = 'e';
-  TabKodow[2] = '³';     TabZnakow[2] = 'l';
-  TabKodow[3] = '¶';     TabZnakow[3] = 's';
-  TabKodow[4] = '¦';     TabZnakow[4] = 'S';
-  TabKodow[5] = '¯';     TabZnakow[5] = 'Z';
-  TabKodow[6] = '¯';     TabZnakow[6] = 'Z';
-  TabKodow[7] = '¯';     TabZnakow[7] = 'Z';
-  TabKodow[8] = '¯';     TabZnakow[8] = 'Z';
-  TabKodow[9] = '¯';     TabZnakow[9] = 'Z';    
+  TabKodow[0] = 'ï¿½';     TabZnakow[0] = 'c';    /*pproby przypisania znaku 'ï¿½' do zmiennych w tablicy skoncza sie niepowodzeniem, poniewaz nie starczy na nie pamieci*/
+  TabKodow[1] = 'ï¿½';     TabZnakow[1] = 'e';
+  TabKodow[2] = 'ï¿½';     TabZnakow[2] = 'l';
+  TabKodow[3] = 'ï¿½';     TabZnakow[3] = 's';
+  TabKodow[4] = 'ï¿½';     TabZnakow[4] = 'S';
+  TabKodow[5] = 'ï¿½';     TabZnakow[5] = 'Z';
+  TabKodow[6] = 'ï¿½';     TabZnakow[6] = 'Z';
+  TabKodow[7] = 'ï¿½';     TabZnakow[7] = 'Z';
+  TabKodow[8] = 'ï¿½';     TabZnakow[8] = 'Z';
+  TabKodow[9] = 'ï¿½';     TabZnakow[9] = 'Z';    
   
   printf("Napis Latin2:  \"%s\"\n",Napis);
 
