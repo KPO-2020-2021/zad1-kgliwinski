@@ -69,9 +69,9 @@ int RozmiarNajdluzszegoSlowa(char* Tekst)
  */
 void ZamienNaPodkreslenie(char* Tekst)
 {
-  for (; *Tekst; ++Tekst)                 //program gdb wskazuje ze zrzut pamieci nastepuje w funkcji ZamienNaPodkreslenie()
-      if (*Tekst == ' ') *Tekst = '_';    //problemem jest prawdopodobnie nieskonczona petla (brak warunku konczacego)
-}                                         //uruchomienie programu debuggerem potwierdza ze blad jest w petli for
+  for (; *Tekst; ++Tekst)                 
+      if (*Tekst == ' ') *Tekst = '_';    
+}                                         
 
 
 
@@ -126,7 +126,7 @@ int IloscWielkichLiter(char *Tekst)
 
 int main()
 {
-  char *Napis = "Jak dobrze jest wstac skoro swit. Jutrzenki blask ...";
+  char Napis[100] = "Jak dobrze jest wstac skoro swit. Jutrzenki blask ...";    //zamiana wskaznika na napis *Napis na tablice Napis[100] powoduje ze program dziala prawidlowo w c i c++
   int IloscSpacji;
   int DlugoscSlowaXXX;
   int IloscMaLiter = 0;

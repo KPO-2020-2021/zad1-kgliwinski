@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-extern const double PI;   //w c++ zamiast extern nalezy uzyc static
+extern const double PI;   
 extern const double E;
 
 
@@ -12,5 +12,4 @@ int main()
   return 0;
 }
 
-//w c program kompiluje sie poprawnie oraz wyswietla poprawne wartosci stalych
-//w c++ program informuje o referencji do niezdefiniowanych stalych PI oraz E. zamiast extern nalezy uzyc static
+//po dodaniu extern przy stalych w modul.c program kompiluje sie prawidlowo w obydwoch jezykach

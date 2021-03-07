@@ -35,7 +35,7 @@ void KonwertujNapis( char *Napis, int *TabKodow, char *TabZnakow, int Rozmiar)
 int main()
 {
   int  IloscKodow = 10;
-  int  Rozmiar = IloscKodow * sizeof('�');    //w c bedzie przypisywalo inna ilosc pamieci (sizeof(int)) niz w c++ (sizeof(char))
+  int  Rozmiar = IloscKodow * sizeof(int);    //w c bedzie przypisywalo inna ilosc pamieci (sizeof(int)) niz w c++ (sizeof(char)), dlatego nalezy zamienic na sizeof(int)
                                               
   int  *TabKodow = (int*)malloc(Rozmiar);
   char *TabZnakow = (char*)malloc(IloscKodow*sizeof(char)); 

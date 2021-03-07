@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 
-double Dodaj();   //aby program kompilowal sie w c++ nalezy dodac tu argumenty funkcji w jej deklaracji (podobnie jak w pliku modul.c)
-
+double Dodaj(double Skl1, double Skl2);   //aby program kompilowal sie w c++ nalezy dodac tu argumenty funkcji w jej deklaracji (podobnie jak w pliku modul.c)
+                                          //po dodaniu argumentow funkcji program dziala poprawnie
 
 int main( )
 {
